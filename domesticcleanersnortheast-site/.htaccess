@@ -1,0 +1,5 @@
+# Force HTTPS and the non-www address (matches the canonical URL)
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://domesticcleanersnortheast.co.uk/$1 [L,R=301]

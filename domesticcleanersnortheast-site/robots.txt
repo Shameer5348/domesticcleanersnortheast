@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://domesticcleanersnortheast.co.uk/sitemap.xml
