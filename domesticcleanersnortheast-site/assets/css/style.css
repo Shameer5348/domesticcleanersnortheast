@@ -126,20 +126,62 @@ p { margin: 0 0 1em; max-width: 62ch; }
 }
 
 /* ---------- Hero ---------- */
-.hero { padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(3rem, 6vw, 4.5rem); }
+.hero {
+  position: relative; overflow: hidden; isolation: isolate;
+  padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(3rem, 6vw, 4.5rem);
+  color: var(--paper);
+}
+.hero__slides { position: absolute; inset: 0; z-index: -2; }
+.hero__slide {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0;
+  animation: hero-fade 20s infinite;
+}
+.hero__slide:nth-child(1) { animation-delay: 0s; }
+.hero__slide:nth-child(2) { animation-delay: 5s; }
+.hero__slide:nth-child(3) { animation-delay: 10s; }
+.hero__slide:nth-child(4) { animation-delay: 15s; }
+@keyframes hero-fade {
+  0%, 100% { opacity: 0; }
+  4% { opacity: 1; }
+  21% { opacity: 1; }
+  25% { opacity: 0; }
+}
+.hero__scrim {
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(100deg, rgba(28,58,66,0.92) 0%, rgba(28,58,66,0.78) 40%, rgba(28,58,66,0.55) 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide { animation: none; opacity: 0; }
+  .hero__slide:first-child { opacity: 1; }
+}
 .hero__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 2.5rem 4rem; align-items: start; }
 @media (max-width: 880px) { .hero__grid { grid-template-columns: 1fr; } }
-.hero h1 { max-width: 17ch; }
+.hero h1 { max-width: 17ch; color: var(--paper); }
 .quick {
   background: var(--white); border: 2px solid var(--ink); border-radius: 14px;
-  padding: 1.75rem; display: grid; gap: 1rem;
+  padding: 1.75rem; display: grid; gap: 1rem; color: var(--ink);
 }
-.quick h2 { font-size: 1.5rem; margin: 0; }
+.quick h2 { font-size: 1.5rem; margin: 0; color: var(--ink); }
 .quick .btn { width: 100%; }
-.hero__lead { font-size: 1.3rem; max-width: 44ch; color: var(--ink-soft); }
+.hero__lead { font-size: 1.3rem; max-width: 44ch; color: #DCEBE6; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 2rem 0 1.25rem; }
-.hero__call { font-size: 1rem; color: var(--ink-soft); margin: 0; }
-.hero__call a { font-weight: 700; color: var(--ink); }
+.hero__call { font-size: 1rem; color: #DCEBE6; margin: 0; }
+.hero__call a { font-weight: 700; color: var(--paper); }
+
+/* ---------- Inner-page hero ---------- */
+.page-hero { background: var(--ink); color: var(--paper); padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(2rem, 4vw, 3rem); }
+.page-hero h1 { max-width: 34ch; }
+.page-hero .hero__lead { color: #DCEBE6; max-width: 60ch; }
+.crumb { font-size: 0.9rem; color: #9FC3BA; margin: 0 0 1rem; }
+.crumb a { color: #DCEBE6; }
+
+/* ---------- Local-area link lists ---------- */
+.nearby { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--rule); }
+.nearby h2 { font-size: 1.3rem; }
+.nearby ul { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; }
+.nearby a { font-weight: 700; }
 
 /* ---------- Area route (the signature element) ---------- */
 .route { background: var(--ink); color: var(--paper); padding: clamp(3rem, 6vw, 4.5rem) 0; }

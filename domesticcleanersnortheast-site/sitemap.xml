@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://domesticcleanersnortheast.co.uk/</loc></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/</loc><priority>1.0</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/regular-cleaning/</loc><priority>0.8</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/deep-cleaning/</loc><priority>0.8</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/end-of-tenancy-cleaning/</loc><priority>0.8</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/pricing/</loc><priority>0.7</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/about/</loc><priority>0.6</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/privacy/</loc><priority>0.3</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/domestic-cleaners-morpeth/</loc><priority>0.6</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/domestic-cleaners-cramlington/</loc><priority>0.6</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/domestic-cleaners-ponteland/</loc><priority>0.6</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/domestic-cleaners-gosforth/</loc><priority>0.6</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/domestic-cleaners-jesmond/</loc><priority>0.6</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/domestic-cleaners-gateshead/</loc><priority>0.6</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/domestic-cleaners-north-shields/</loc><priority>0.6</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/domestic-cleaners-tynemouth/</loc><priority>0.6</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/domestic-cleaners-whitley-bay/</loc><priority>0.6</priority></url>
+  <url><loc>https://domesticcleanersnortheast.co.uk/domestic-cleaners-sunderland/</loc><priority>0.6</priority></url>
 </urlset>
