@@ -46,26 +46,29 @@
   });
 })();
 
-// Hero background video: skip autoplay for reduced-motion or data-saver users
+// Hero background video: only one of desktop/mobile cuts plays at a time,
+// and playback pauses for anyone who prefers reduced motion.
 (function () {
-  var videos = document.querySelectorAll('.hero__video video');
-  if (!videos.length) return;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var saveData = navigator.connection && navigator.connection.saveData;
-  if (reduceMotion || saveData) return;
-
-  var mobileQuery = window.matchMedia('(max-width: 720px)');
   var desktopVideo = document.querySelector('.hero__video video.is-desktop');
   var mobileVideo = document.querySelector('.hero__video video.is-mobile');
+  if (!desktopVideo || !mobileVideo) return;
+
+  var mobileQuery = window.matchMedia('(max-width: 720px)');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function sync() {
     var active = mobileQuery.matches ? mobileVideo : desktopVideo;
     var inactive = mobileQuery.matches ? desktopVideo : mobileVideo;
-    if (inactive) inactive.pause();
-    if (active) active.play().catch(function () {});
+    inactive.pause();
+    if (reduceMotion.matches) {
+      active.pause();
+    } else {
+      active.play().catch(function () {});
+    }
   }
   sync();
   mobileQuery.addEventListener('change', sync);
+  reduceMotion.addEventListener('change', sync);
 })();
 
 // Hero quick-start: carry postcode and service into the main quote form
